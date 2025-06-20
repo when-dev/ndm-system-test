@@ -1,7 +1,17 @@
 <table>
   <thead>
     <tr>
-      <th (click)="sort('address')">Адрес назначения</th>
+      <th (click)="sort('address')" class="sortable">
+        <span class="th-flex">
+          <span>Адрес назначения</span>
+          <span
+            class="arrow"
+            [class.up]="sortDirection === 1"
+            [class.down]="sortDirection === -1"
+            >&#9650;</span
+          >
+        </span>
+      </th>
       <th (click)="sort('gateway')">Шлюз</th>
       <th (click)="sort('interface')">Интерфейс</th>
     </tr>

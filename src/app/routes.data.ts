@@ -46,7 +46,7 @@ export const ROUTES: Route[] = [
     uuid: '6',
     address: '193.0.175.22/32',
     mask: '255.255.255.255',
-    gateway: '193.0.174.1',
+    gateway: '193.0.161.1',
     interface: 'Подключение Ethernet',
   },
 ];
