@@ -14,6 +14,13 @@ export class RoutesTableComponent {
   sortColumn: keyof Route = 'address';
   sortDirection: 1 | -1 = 1;
 
+  ipToNumber(ip: string): number {
+    const [ipPart] = ip.split('/');
+    return ipPart
+      .split('.')
+      .reduce((acc, part) => (acc << 8) + Number(part), 0);
+  }
+
   sort(column: keyof Route) {
     if (this.sortColumn === column) {
       this.sortDirection = -this.sortDirection as 1 | -1;
@@ -22,9 +29,15 @@ export class RoutesTableComponent {
       this.sortDirection = 1;
     }
     this.routes.sort((a, b) => {
-      if (a[column] < b[column]) return -1 * this.sortDirection;
-      if (a[column] > b[column]) return 1 * this.sortDirection;
-      return 0;
-    })
+      if (column === 'address' || column === 'gateway') {
+        return (
+          (this.ipToNumber(a[column]) - this.ipToNumber(b[column])) * this.sortDirection
+        );
+      } else {
+        if (a[column] < b[column]) return -1 * this.sortDirection;
+        if (a[column] > b[column]) return 1 * this.sortDirection;
+        return 0;
+      }
+    });
   }
 }
