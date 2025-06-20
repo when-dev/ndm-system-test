@@ -1,4 +1,11 @@
 h1 {
-  text-align: center;
-  margin-top: 40px;
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.routes-table-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
 }

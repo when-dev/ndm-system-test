@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RoutesListComponent } from './routes-list.component';
+import { RoutesTableComponent } from './routes-table/routes-table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RoutesListComponent],
+  imports: [RoutesTableComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected title = 'routes-table';

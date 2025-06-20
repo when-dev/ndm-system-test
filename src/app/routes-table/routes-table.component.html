@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Адрес назначения</th>
+      <th>Шлюз</th>
+      <th>Интерфейс</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let route of routes">
+      <td>{{ route.address }}</td>
+      <td>{{ route.gateway }}</td>
+      <td>{{ route.interface }}</td>
+    </tr>
+  </tbody>
+</table>
